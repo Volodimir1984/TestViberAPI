@@ -1,0 +1,28 @@
+﻿@model IEnumerable<UserDisplay>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th>Id Viber</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var user in Model)
+            {
+                <tr>
+                    <td>@user.IdViber</td>
+                    <td>@user.Name</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="UpdateUser" asp-route-id="@user.Id">update user</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
